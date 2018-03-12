@@ -33,7 +33,7 @@ public class Main {
         int numQueries = scanner.nextInt();
 
         for(int i=0;i<numQueries;i++) {
-            System.out.println("Enter the string : ");
+            System.out.println("Enter the string insert or delete : ");
             String inputString = scanner.next();
             if (inputString.equalsIgnoreCase("Insert")) {
                 System.out.println("Enter the index and new number");
@@ -41,9 +41,12 @@ public class Main {
             } else if (inputString.equalsIgnoreCase("Delete")) {
                 System.out.println("Enter the index number");
                 listOfNum = deleteNum(listOfNum, scanner.nextInt());
+            }else{
+                System.out.println("Invalid Entry...Exiting program");
+                System.exit(0);
             }
         }
-
+        scanner.close();
         for(Integer num : listOfNum){
             System.out.println(num.intValue());
         }
