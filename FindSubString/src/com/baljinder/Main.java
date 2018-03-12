@@ -26,6 +26,8 @@ public class Main {
         //Method to find smallest and largest using Collections library
         //System.out.println(getSmallestAndLargestUsingFunctions(inputString,subStringLength));
 
+        scan.close();
+
     }
 
     /**

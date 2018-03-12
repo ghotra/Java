@@ -21,6 +21,8 @@ public class Main {
         }else{
             System.out.println("String are not anagrams");
         }
+
+        scanner.close();
     }
 
     /**
