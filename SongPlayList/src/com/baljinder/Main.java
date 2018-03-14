@@ -203,7 +203,7 @@ public class Main {
         System.out.println("Enter the name of the playlist you want to add: ");
         String pName = scanner.nextLine();
         pList = null;
-        if(getPlayList(pName) >=0){
+        if (getPlayList(pName) >= 0) {
             pList = playList.get(getPlayList(pName));
             ListIterator<Song> songList = pList.getSongList().listIterator();
             printMenuOption();
@@ -216,48 +216,47 @@ public class Main {
 
                 switch (choice) {
                     case 0:
-                        if(forward) {
+                        if (forward) {
                             songList.next();
                         }if (songList.hasNext()) {
-                                System.out.println("Now playing " + songList.next().getSongName());
-                                forward = false;
-                            } else {
-                                System.out.println("Reached to end of the list");
-                                forward = false;
-                                printMenuOption();
-                            }
-                            break;
+                            System.out.println("Now playing " + songList.next().getSongName());
+                            forward = false;
+                        } else {
+                            System.out.println("Reached to end of the list");
+                            forward = false;
+                            printMenuOption();
+                        }
+                        break;
                     case 1:
-                        if(!forward) {
+                        if (!forward) {
                             songList.previous();
                         }if (songList.hasPrevious()) {
-                                System.out.println("Now playing " + songList.previous().getSongName());
-                                forward = true;
-                            } else {
-                                System.out.println("Reached to front of the list");
-                                forward = true;
-                                printMenuOption();
-                            }
-                            break;
+                            System.out.println("Now playing " + songList.previous().getSongName());
+                            forward = true;
+                        } else {
+                            System.out.println("Reached to front of the list");
+                            forward = true;
+                            printMenuOption();
+                        }
+                        break;
                     case 2:
                         String currentSong = null;
-                        if(forward){
+                        if (forward) {
                             currentSong = songList.next().getSongName();
                             System.out.println("Now playing " + currentSong);
                             currentSong = songList.previous().getSongName();
-                        }else if(!forward){
+                        } else if (!forward) {
                             currentSong = songList.previous().getSongName();
                             System.out.println("Now playing " + currentSong);
                             currentSong = songList.next().getSongName();
                         }
-
                         break;
                     case 3:
                         quit = true;
                         break;
                 }
             }
-        }else{
+        } else {
             System.out.println("Playlist doesn't exist");
         }
 
