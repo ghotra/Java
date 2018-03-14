@@ -18,7 +18,7 @@ public class Location {
         }
         this.exits.put("Q", 0);
     }
-    
+
     public int getLocationID() {
         return locationID;
     }
